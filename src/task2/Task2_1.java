@@ -3,8 +3,7 @@ package task2;
 import java.util.Scanner;
 
 public class Task2_1 {
-    public static void task2_1(
-    ) {
+    public static void task2_1() {
         System.out.println("Input number of array elements:");
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
