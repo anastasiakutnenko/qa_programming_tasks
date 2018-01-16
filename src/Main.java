@@ -5,6 +5,8 @@ import task3.Task3_1;
 import task3.Task3_2;
 import task4.Task4_1;
 import task4.Task4_2;
+import task5.Task5;
+import task6.Task6_1;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +16,9 @@ public class Main {
 //        Task3_1.task3_1();
 //        Task3_2.task3_2();
 //        Task4_1.task4_1();
-        Task4_2.task4_2();
+//        Task4_2.task4_2();
+//        Task5.task5();
+//        Strings_declaration.test_declaration();
+        Task6_1.task6_1();
     }
 }
