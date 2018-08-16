@@ -1,28 +1,27 @@
 package task7;
 
-public class Task_7
-{
-    public static void task_7()
-    {
-      String str = "HannaH";
-      String convertedToLow = str.toLowerCase();
-      int n = str.length();
-      int countElse = 0;
-      for (int i = 0; i < n; i++)
-      {
+import utils.FileReader;
 
-          if (convertedToLow.charAt(i) == convertedToLow.charAt(n-1-i))
-          {
-          }
-          else{
-              System.out.print("Word is not palindrome");
-              countElse++;
-              break;
-          }
-      }
-      if (countElse == 0)
-      {
-        System.out.print("Word is palindrome");
-      }
-      }
+import java.io.FileNotFoundException;
+
+public class Task_7 {
+    public static void task_7() throws FileNotFoundException {
+        String str = FileReader.fileReader("src/files/7.txt");
+        String convertedToLow = str.toLowerCase();
+        int n = str.length();
+        boolean notPalindromeFlag = false;
+
+        for (int i = 0; i < n && notPalindromeFlag == false; i++) {
+
+            if (convertedToLow.charAt(i) != convertedToLow.charAt(n - 1 - i)) {
+                System.out.print("Word is not palindrome");
+                notPalindromeFlag = true;
+            }
+
+        }
+
+        if (notPalindromeFlag == false) {
+            System.out.print("Word is palindrome");
+        }
     }
+}

@@ -1,10 +1,14 @@
+// delete spaces - manual elements arrangement
 package task6;
+
+import utils.FileReader;
+
+import java.io.FileNotFoundException;
 
 public class Task6_1
 {
-    public static void task6_1()
-    {
-        String str = "Have a nice weekend";
+    public static void task6_1() throws FileNotFoundException {
+        String str = FileReader.fileReader("src/files/6.txt");
         String strResult = "";
 
         char space = ' ';
