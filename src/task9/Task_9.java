@@ -8,10 +8,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Task_9 {
-    public static void differenceBetweenTwoDates() throws ParseException, FileNotFoundException {
+    private static FileReader fileReader;
+    public static void main(String[] args) throws ParseException, FileNotFoundException {
+        fileReader = new FileReader();
+        String firstDateString = fileReader
+                .getPropValues("properties/properties_task9.properties","date1");
+        String secondDateDateString = fileReader
+                .getPropValues("properties/properties_task9.properties","date2");
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yy");
-        Date date1 = dateFormat.parse("05.12.2019");
-        Date date2 = dateFormat.parse("10.12.2019");
+        Date date1 = dateFormat.parse(firstDateString);
+        Date date2 = dateFormat.parse(secondDateDateString);
 
         System.out.println("The first date: " + date1);
         System.out.println("The second date: " + date2);

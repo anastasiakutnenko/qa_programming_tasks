@@ -5,8 +5,10 @@ import utils.FileReader;
 import java.io.FileNotFoundException;
 
 public class Task_7 {
-    public static void task_7() throws FileNotFoundException {
-        String str = FileReader.fileReader("src/files/7.txt");
+    private static FileReader fileReader;
+    public static void main(String[] args) throws FileNotFoundException {
+        fileReader = new FileReader();
+        String str = fileReader.getPropValues("properties/properties_task7.properties","str");
         String convertedToLow = str.toLowerCase();
         int n = str.length();
         boolean notPalindromeFlag = false;

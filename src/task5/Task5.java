@@ -1,12 +1,17 @@
 package task5;
 
+import utils.FileReader;
+
 import java.util.regex.Pattern;
 
 public class Task5 {
-    public static void task5(){
-        String a = "Hello world world";
-        String search_term = "world";
-        int number_of_entries=0;
+    private static FileReader fileReader;
+    public static void main(String[] args) {
+        fileReader = new FileReader();
+        String a = fileReader.getPropValues("properties/properties_task5.properties","a");
+        String search_term = fileReader
+                .getPropValues("properties/properties_task5.properties","search_term");
+        int number_of_entries = 0;
         String[] parts = a.split(Pattern.quote(" "));
         for (int i=0;i<parts.length;i++)
         {

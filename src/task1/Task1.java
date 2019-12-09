@@ -1,11 +1,12 @@
 package task1;
 
-import java.util.Scanner;
+import utils.FileReader;
 
 public class Task1 {
-    public static void task1() {
+    public static FileReader fileReader;
+    public static void main(String[] args) {
         int max_heart_rate;
-
+        fileReader = new FileReader();
         String percentage100 = "Maximum pulse - 100% ";
         String percentage90 = "VO2 max zone - 90-100%(maximum load) ";
         String percentage80 = "Anaerobic zone - 80-90%(strength training) ";
@@ -14,17 +15,14 @@ public class Task1 {
         String percentage50 = "Light activity zone - 50-60%(warm-up) ";
         String percentage0 = "Resting heart-rate 0% ";
 
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Input your age:");
+        int age = Integer.valueOf(fileReader
+                .getPropValues("properties/properties_task1.properties","age"));
+        int resting_heart_rate = Integer.valueOf(fileReader
+                .getPropValues("properties/properties_task1.properties","resting_heart_rate"));
 
-        int age = scan.nextInt();
 
         max_heart_rate = 220 - age;
-
         System.out.println("Your max heart rate is " + max_heart_rate);
-        System.out.print("Input your resting heart-rate:");
-
-        int resting_heart_rate = scan.nextInt();
 
         int target_zone_90 = (int)Math.round(max_heart_rate * 0.9);
         int target_zone_80 = (int)Math.round(max_heart_rate * 0.8);

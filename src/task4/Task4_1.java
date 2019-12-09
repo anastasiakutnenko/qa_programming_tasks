@@ -1,8 +1,17 @@
 package task4;
+
+import utils.FileReader;
+
+import static utils.ArrayConverter.stringToArray;
+
 public class Task4_1 {
-    public static void task4_1() {
-        int[] a = {1, 2, 3, 4, 5, 6, 2, 8};
-        int[] b = {2, 4, 6, 8};
+    public static FileReader fileReader;
+    public static void main(String[] args) {
+        fileReader = new FileReader();
+        String aString = fileReader.getPropValues("properties/properties_task4.properties","a");
+        String bString = fileReader.getPropValues("properties/properties_task4.properties","b");
+        int[] a = stringToArray(aString);
+        int[] b = stringToArray(bString);
         // declare common elements massive dimension as a.length+b.length as we don't know how many
         //common elements will be
         int[] common = new int[a.length + b.length];

@@ -6,8 +6,10 @@ import utils.FileReader;
 import java.io.FileNotFoundException;
 
 public class Task6_2 {
-    public static void task6_2() throws FileNotFoundException {
-        String withSpaces = FileReader.fileReader("src/files/6.txt");
+    private static FileReader fileReader;
+    public static void main(String[] args) throws FileNotFoundException {
+        fileReader = new FileReader();
+        String withSpaces = fileReader.getPropValues("properties/properties_task6.properties","str");
         String withoutSpaces = withSpaces.replace(" ","");
         System.out.print(withoutSpaces);
 

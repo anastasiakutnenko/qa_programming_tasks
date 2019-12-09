@@ -1,23 +1,19 @@
 //minimum and maximum array element - manual elements arrangement
 package task3;
 
-import java.util.Scanner;
+import utils.FileReader;
+import static utils.ArrayConverter.stringToArray;
 
 public class Task3_1 {
-    public static void task3_1 (){
-        System.out.println("Input number of array elements:");
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        int[] myIntArray = new int[n];
-
-        for (int i = 0; i < n; i++) {
-            System.out.printf("Input a[%d]: ", i);
-            myIntArray[i] = scan.nextInt();
-        }
+    public static FileReader fileReader;
+    public static void main(String[] args) {
+        fileReader = new FileReader();
+        String aString = fileReader.getPropValues("properties/properties_task3.properties","array");
+        int[] myIntArray = stringToArray(aString);
 
         int min = myIntArray[0];
         int max = myIntArray[0];
-        for(int i = 0; i < n; i++) {
+        for(int i = 0; i < myIntArray.length; i++) {
 
             if (min > myIntArray[i]) {
                 min = myIntArray[i];

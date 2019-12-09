@@ -7,8 +7,10 @@ import java.io.FileNotFoundException;
 
 public class Task6_1
 {
-    public static void task6_1() throws FileNotFoundException {
-        String str = FileReader.fileReader("src/files/6.txt");
+    private static FileReader fileReader;
+    public static void main(String[] args) throws FileNotFoundException {
+        fileReader = new FileReader();
+        String str = fileReader.getPropValues("properties/properties_task6.properties","str");
         String strResult = "";
 
         char space = ' ';

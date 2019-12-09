@@ -1,20 +1,18 @@
-//sum of array elements - manual elements arragement
+//sum of array elements - manual elements arrangement
 package task2;
-import java.util.Scanner;
+import utils.FileReader;
+
+import static utils.ArrayConverter.stringToArray;
 
 public class Task2_1 {
-    public static void task2_1() {
-        System.out.println("Input number of array elements:");
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        int[] myIntArray = new int[n];
+    public static FileReader fileReader;
+    public static void main(String[] args) {
+        fileReader = new FileReader();
+        String aString = fileReader.getPropValues("properties/properties_task2.properties", "array");
+        int[] myArray = stringToArray(aString);
         int arraySum = 0;
-        for (int i = 0; i < n; i++) {
-            System.out.printf("Input a[%d]: ", i);
-            myIntArray[i] = scan.nextInt();
-        }
-        for (int i = 0; i < n; i++) {
-            arraySum += myIntArray[i];
+        for (int i = 0; i < myArray.length; i++) {
+            arraySum += myArray[i];
         }
 
         System.out.println("Sum of array elements is: " + arraySum);
